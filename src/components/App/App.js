@@ -10,7 +10,7 @@ class App extends Component {
         </header>
         <br/>
         <p>Gallery goes here</p>
-        <img src="images/goat_small.jpg"/>
+        <img src="images/goat_small.jpg" alt="pic"/>
       </div>
     );
   }
