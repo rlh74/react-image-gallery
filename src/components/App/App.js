@@ -61,11 +61,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-<<<<<<< HEAD
-          <h1 className="App-title">ross's musical memories</h1>
-=======
           <h1 className="App-title">Image Gallery</h1>
->>>>>>> database-setup
         </header>
         <br/>
         <GalleryForm imageInput={this.addImage}/>
