@@ -10,19 +10,19 @@ To see the fully functional site, please download and install files from this re
 
 ### Prerequisites
 
-Link to software that is required to install the app (e.g. node).
-
 - [Node.js](https://nodejs.org/en/)
 
 ## Installation
 
-To get the base mode application up and running, follow these steps:
+To get the application up and running, follow these steps:
 
-1. Download repository to local machine
-2. Open up your editor of choice and run an `npm install`
-3. Run `npm run server` in your terminal
-4. Run `npm run client` in your terminal
-6. The `npm run client` command will open up a new browser tab for you!
+1. Download repository to local machine 
+2. Create a database named `react_gallery`,
+3. The queries in the `database.sql` file are set up to create all the necessary tables and populate the needed data to allow the application to run correctly. The project is built on Postgres, so you will need to make sure to have that installed. We recommend using Postico to run those queries as that was used to create the queries,
+4. Open up your editor of choice and run an `npm install` 
+5. Run `npm run server` in your terminal 
+6. Run `npm run client` in your terminal
+7. The `npm run client` command will open up a new browser tab for you!
 
 ## Usage
 Using the app is quite simple, you can:
@@ -30,6 +30,7 @@ Using the app is quite simple, you can:
 1. View images in gallery
 2. Click on individual images to bring up image description
 3. Click 'Like' button to update number of likes
+4. Use the input form to add an image with a URL
 
 ## Built With
 
