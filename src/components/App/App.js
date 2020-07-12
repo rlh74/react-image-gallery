@@ -37,8 +37,8 @@ class App extends Component {
           <h1 className="App-title">Gallery of my life</h1>
         </header>
         <br/>
-        <p>Gallery goes here</p>
-        <img src="images/goat_small.jpg" alt="pic"/>
+        {/* <p>Gallery goes here</p> */}
+        {/* <img src="images/goat_small.jpg" alt="pic"/> */}
         <GalleryList items={this.state.lifeGallery}/>
       </div>
     );

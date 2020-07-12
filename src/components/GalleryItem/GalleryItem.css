@@ -1,0 +1,18 @@
+.galleryItem {
+  width: 150px;
+  height: 150px;
+  font-size: 1vw;
+  text-align: center;
+  background-color: black;
+  color: white;
+}
+
+.galleryItem img {
+  width: 100px;
+  height: auto;
+  position: relative;
+}
+
+/* .galleryItem p {
+  font-size: 1vw;
+} */

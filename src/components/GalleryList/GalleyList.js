@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import GalleryItem from '../GalleryItem/GalleryItem'
+import './GalleryList.css';
+import GalleryItem from '../GalleryItem/GalleryItem';
 
 
 class GalleryList extends Component {
@@ -9,11 +10,9 @@ class GalleryList extends Component {
 
   render() {
     return (
-      <>
-        <ul>
+      <div className="gallery">
           { this.props.items.map( ( item, index )=><GalleryItem imageItem={ item } key={ index }/>)}
-        </ul>
-      </>
+      </div>
     ); // end return
   } // end render
 } // end class
