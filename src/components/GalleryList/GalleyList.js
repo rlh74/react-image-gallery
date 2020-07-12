@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import GalleryItem from '../GalleryItem/GalleryItem'
+
 
 class GalleryList extends Component {
   componentDidMount(){
@@ -8,7 +10,9 @@ class GalleryList extends Component {
   render() {
     return (
       <>
-        <p>{ JSON.stringify( this.props.items ) }</p>
+        <ul>
+          { this.props.items.map( ( item, index )=><GalleryItem imageItem={ item } key={ index }/>)}
+        </ul>
       </>
     ); // end return
   } // end render
