@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Axios from 'axios';
 import GalleryList from '../GalleryList/GalleyList'
+import GalleryForm from '../GalleryForm/GalleryForm'
 
 class App extends Component {
   state = {
@@ -27,6 +28,20 @@ class App extends Component {
       }) // end Axios PUT
   } // end likeItem
 
+  addImage = (imageToAdd) => {
+    console.log('in addImage');
+    Axios({
+      method: 'POST',
+      url: '/gallery',
+      data: imageToAdd
+    })
+      .then((response)=>{
+          this.getGallery();
+      }).catch((error)=>{
+        console.log('Error adding songs', error)
+      })
+  }
+
   getGallery = () => {
     Axios({
       method: 'GET',
@@ -46,9 +61,14 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
+<<<<<<< HEAD
           <h1 className="App-title">ross's musical memories</h1>
+=======
+          <h1 className="App-title">Image Gallery</h1>
+>>>>>>> database-setup
         </header>
         <br/>
+        <GalleryForm imageInput={this.addImage}/>
         <GalleryList items={this.state.lifeGallery} likeItem={this.likeItem}/>
       </div>
     );
