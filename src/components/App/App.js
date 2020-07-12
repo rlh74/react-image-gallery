@@ -24,17 +24,15 @@ class App extends Component {
           this.getGallery();
       }).catch((error)=>{
         console.log('Error adding like', error)
-      })
-  }
+      }) // end Axios PUT
+  } // end likeItem
 
   getGallery = () => {
-    // get items from server via AXIOS
     Axios({
       method: 'GET',
       url: '/gallery'
     }).then( ( response ) =>{
       console.log( 'back from GET:', response.data );
-      // hold this data in state.items
       this.setState({
         lifeGallery: response.data
       }); 
@@ -51,8 +49,6 @@ class App extends Component {
           <h1 className="App-title">Gallery of my life</h1>
         </header>
         <br/>
-        {/* <p>Gallery goes here</p> */}
-        {/* <img src="images/goat_small.jpg" alt="pic"/> */}
         <GalleryList items={this.state.lifeGallery} likeItem={this.likeItem}/>
       </div>
     );

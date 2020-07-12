@@ -1,22 +1,23 @@
-.gallery-cell {
-  width: 150px;
-  height: 150px;
-
+.container {
+  display: inline-block;
+  margin: 1vw;
+  text-align: center;
 }
 
 .gallery-item {
-  font-size: 1vw;
-  text-align: center;
-  background-color: black;
-  color: white;
+  width: 200px;
+  height: 200px;
+  overflow: auto;
+  word-wrap: break-word;
 }
 
 .gallery-item img {
-  width: 100px;
+  width: 200px;
   height: auto;
-  position: relative;
 }
 
-/* .galleryItem p {
-  font-size: 1vw;
-} */
+.gallery-item p {
+  font-size: 100%;
+  }
+
+
