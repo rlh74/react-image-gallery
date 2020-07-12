@@ -10,7 +10,7 @@ router.put('/like/:id', (req, res) => {
     console.log(req.params);
     const galleryId = req.params.id;
     const sqlText = `UPDATE gallery SET likes = likes + 1 WHERE id=$1;`
-    pool.query(sqlText, [req.params.id]).then((result)=>{
+    pool.query(sqlText, [galleryId]).then((result)=>{
         res.sendStatus(200);
     })
 }); // END PUT Route
