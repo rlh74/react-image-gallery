@@ -27,6 +27,21 @@ class App extends Component {
       }) // end Axios PUT
   } // end likeItem
 
+  // getGallery = () => {
+  //   Axios({
+  //     method: 'GET',
+  //     url: '/gallery'
+  //   }).then( ( response ) =>{
+  //     console.log( 'back from GET:', response.data );
+  //     this.setState({
+  //       lifeGallery: response.data
+  //     }); 
+  //   }).catch( ( err )=>{
+  //     console.log( err );
+  //     alert( 'error with GET' );
+  //   }) // end axios call
+  // } // end getGallery
+
   getGallery = () => {
     Axios({
       method: 'GET',
