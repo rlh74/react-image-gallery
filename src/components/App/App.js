@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Axios from 'axios';
 import GalleryList from '../GalleryList/GalleyList'
+import GalleryForm from '../GalleryForm/GalleryForm'
 
 class App extends Component {
   state = {
@@ -27,20 +28,19 @@ class App extends Component {
       }) // end Axios PUT
   } // end likeItem
 
-  // getGallery = () => {
-  //   Axios({
-  //     method: 'GET',
-  //     url: '/gallery'
-  //   }).then( ( response ) =>{
-  //     console.log( 'back from GET:', response.data );
-  //     this.setState({
-  //       lifeGallery: response.data
-  //     }); 
-  //   }).catch( ( err )=>{
-  //     console.log( err );
-  //     alert( 'error with GET' );
-  //   }) // end axios call
-  // } // end getGallery
+  addImage = (imageToAdd) => {
+    console.log('in addImage');
+    Axios({
+      method: 'POST',
+      url: '/gallery',
+      data: imageToAdd
+    })
+      .then((response)=>{
+          this.getGallery();
+      }).catch((error)=>{
+        console.log('Error adding songs', error)
+      })
+  }
 
   getGallery = () => {
     Axios({
@@ -61,9 +61,10 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Gallery of my life</h1>
+          <h1 className="App-title">Image Gallery</h1>
         </header>
         <br/>
+        <GalleryForm imageInput={this.addImage}/>
         <GalleryList items={this.state.lifeGallery} likeItem={this.likeItem}/>
       </div>
     );

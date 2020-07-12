@@ -3,7 +3,23 @@ const router = express.Router();
 const galleryItems = require('../modules/gallery.data');
 const pool = require('../modules/pool.js');
 
-// DO NOT MODIFY THIS FILE FOR BASE MODE
+// Setup a POST route to add a new song to the database
+router.post('/', (req, res) => {
+    const newImg = req.body;
+    const sqlText = `INSERT INTO "gallery" ("title", "path", "description") VALUES
+    ($1, $2, $3)`;
+    // Let sql sanitize your inputs (NO Bobby Drop Tables here!)
+    // the $1, $2, etc get substituted with the values from the array below
+    pool.query(sqlText, [newImg.title, newImg.url, newImg.description])
+        .then((result) => {
+            console.log(`Added song to the database`, newImg);
+            res.sendStatus(201);
+        })
+        .catch((error) => {
+            console.log(`Error making database query ${sqlText}`, error);
+            res.sendStatus(500); // Good server always responds
+        })
+})
 
 // PUT Route
 router.put('/like/:id', (req, res) => {
