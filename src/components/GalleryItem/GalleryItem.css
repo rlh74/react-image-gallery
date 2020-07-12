@@ -1,13 +1,17 @@
-.galleryItem {
+.gallery-cell {
   width: 150px;
   height: 150px;
+
+}
+
+.gallery-item {
   font-size: 1vw;
   text-align: center;
   background-color: black;
   color: white;
 }
 
-.galleryItem img {
+.gallery-item img {
   width: 100px;
   height: auto;
   position: relative;

@@ -17,10 +17,30 @@ class GalleryItem extends Component {
     })
   }
 
+  handleLike = () => {
+    this.props.likeItem(this.props.imageItem.id);
+  }
+
+  // likeItem=(event)=>{
+  //   event.preventDefault();
+  //   console.log('in like item', this.props.imageItem.id);
+  //   this.props.addLike(this.props.imageItem.likes);
+  // }
+
+
+
   render() {
     return (
-      <div className="galleryItem" onClick={this.toggleDetails}>
-        {(this.state.displayImage ? <img src={this.props.imageItem.path} alt={this.props.imageItem.title}/> : <p>{this.props.imageItem.description}</p>)}
+      <div className="gallery-cell">
+        <div className="gallery-item" onClick={this.toggleDetails}>
+          {(this.state.displayImage ? 
+          <img src={this.props.imageItem.path} alt={this.props.imageItem.title}/> : 
+          <p>{this.props.imageItem.description}</p>)}
+        </div>
+        Likes: {this.props.imageItem.likes}
+        <div className="like-btn">
+            <button onClick={this.handleLike}>Like</button>
+        </div>
       </div>
     ); // end return
   } // end render

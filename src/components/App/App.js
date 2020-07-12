@@ -13,7 +13,21 @@ class App extends Component {
     this.getGallery();
   }
 
-  getGallery(){
+  likeItem = (input) => {
+    console.log('Updating likes of:', input);
+    Axios({
+      method: 'PUT',
+      url: 'gallery/like/' + input,
+      data: input
+    })
+      .then((response)=>{
+          this.getGallery();
+      }).catch((error)=>{
+        console.log('Error adding like', error)
+      })
+  }
+
+  getGallery = () => {
     // get items from server via AXIOS
     Axios({
       method: 'GET',
@@ -26,7 +40,7 @@ class App extends Component {
       }); 
     }).catch( ( err )=>{
       console.log( err );
-      alert( 'nope' );
+      alert( 'error with GET' );
     }) // end axios call
   } // end getGallery
 
@@ -39,7 +53,7 @@ class App extends Component {
         <br/>
         {/* <p>Gallery goes here</p> */}
         {/* <img src="images/goat_small.jpg" alt="pic"/> */}
-        <GalleryList items={this.state.lifeGallery}/>
+        <GalleryList items={this.state.lifeGallery} likeItem={this.likeItem}/>
       </div>
     );
   }
